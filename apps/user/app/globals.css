@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #faf5f3;
+  --surface: #ffffff;
+  --ink: #33272c;
+  --sub: #8d7a80;
+  --accent: #d4849a;
+  --accent-ink: #ffffff;
+  --soft: #f3e2e4;
+  --ph: #eed3d8;
+  --line: #eedfe1;
+  --line2: #dcc7ca;
+  --r: 24px;
+  --hdr: rgba(250, 245, 243, 0.82);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+  --font-zen: var(--font-zen-kaku-gothic-new);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-zen), sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #e8c9d0;
+}
+
+.placeholder-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--soft) 0 14px,
+    var(--ph) 14px 28px
+  );
 }
